@@ -24,15 +24,19 @@ const url =
         country: "India"
      };
     
-     const insertResult = await collection.insertMany([data]);
-     console.log('Inserted documents =>', insertResult);
-     
+     //const insertResult = await collection.insertMany([data]);
+     //console.log('Inserted documents =>', insertResult);
+
      // the following code examples can be pasted here...
 
      const findResult = await collection.find({}).toArray();
      console.log('Found documents =>', findResult);
 
-     
+     //const filteredDocs = await collection.find({ data }).toArray();
+    // console.log('Found documents filtered by { a: 3 } =>', filteredDocs);
+
+    const updateResult = await collection.updateOne({ age: 30 }, { $set: { age: 20} });
+    console.log('Updated documents =>', updateResult);
    
      return 'done.';
    }
