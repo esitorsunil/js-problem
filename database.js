@@ -35,8 +35,10 @@ const url =
      //const filteredDocs = await collection.find({ data }).toArray();
     // console.log('Found documents filtered by { a: 3 } =>', filteredDocs);
 
-    const updateResult = await collection.updateOne({ age: 30 }, { $set: { age: 20} });
-    console.log('Updated documents =>', updateResult);
+   // const updateResult = await collection.updateOne({ age: 30 }, { $set: { age: 20} });
+   // console.log('Updated documents =>', updateResult);
+   const deleteResult = await collection.deleteMany({ age: 22 });
+   console.log('Deleted documents =>', deleteResult);
    
      return 'done.';
    }
