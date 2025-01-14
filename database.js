@@ -18,6 +18,8 @@ const url =
      const collection = db.collection('User');
    
      // the following code examples can be pasted here...
+     const findResult = await collection.find({}).toArray();
+     console.log('Found documents =>', findResult);
    
      return 'done.';
    }
