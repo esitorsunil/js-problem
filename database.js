@@ -16,10 +16,23 @@ const url =
      console.log('Connected successfully to server');
      const db = client.db(dbName);
      const collection = db.collection('User');
-   
+
+     const data = {
+        firstname: "The",
+        lastname: "Batman",
+        age: 30,
+        country: "India"
+     };
+    
+     const insertResult = await collection.insertMany([data]);
+     console.log('Inserted documents =>', insertResult);
+     
      // the following code examples can be pasted here...
+
      const findResult = await collection.find({}).toArray();
      console.log('Found documents =>', findResult);
+
+     
    
      return 'done.';
    }
